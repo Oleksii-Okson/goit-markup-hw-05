@@ -780,12 +780,18 @@ button {
     color: var(--light-txt-cl);
 }
 
+.overlay-text:hover,
+.overlay-text:focus {
+    transform: translateY(0%);
+}
+
 .card-set-item:hover .overlay {
     transform: translateY(0);
 }
 
 .decoration {
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -850,6 +856,7 @@ button {
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     fill: #FFFFFF;
+    background-color: #404bbf;
     border: none;
 }
 
