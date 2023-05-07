@@ -17,6 +17,9 @@
     /* others */
     --indent: 24px;
     --items: 3;
+
+    --header-idx: 10;
+    --modal-idx: 100;
 }
 
 .section {
@@ -49,6 +52,7 @@ body {
 .header {
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    z-index: var(--header-idx);
 }
 
 
@@ -65,6 +69,10 @@ body {
     gap: 40px;
 }
 
+.header-after {
+    position: relative;
+}
+
 .header-adress-list {
     display: flex;
     gap: 40px;
@@ -76,6 +84,25 @@ body {
     color: var(--secondary-txt-cl);
     font-weight: 500;
     padding: 24px 0;
+}
+
+.contacts.active {
+    color: var(--focus-txt-btn);
+}
+
+.contacts::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.contacts.active::after {
+    background-color: var(--focus-txt-btn);
 }
 
 .header-nav {
@@ -708,6 +735,7 @@ button {
 
 .card-thumb {
     position: relative;
+    overflow: hidden;
 }
 
 /* overlay */
@@ -718,7 +746,10 @@ button {
     background-color: #4D5AE5;
     width: 360px;
     height: 300px;
-
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateY(150%);
+    transition: transform 400ms;
 }
 
 .overlay-text {
@@ -728,6 +759,10 @@ button {
     left: 32px;
     top: 40px;
     color: var(--light-txt-cl);
+}
+
+.card-set-item:hover .overlay {
+    transform: translateY(0);
 }
 
 .decoration {
@@ -743,19 +778,28 @@ button {
 /* modal */
 
 .backdrop {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
 
     width: 100%;
     height: 100%;
+    z-index: var(--modal-idx);
 }
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+}
+
 
 .modal {
     position: absolute;
-    left: 516px;
-    top: 88px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 408px;
     height: 576px;
     background-color: #FCFCFC;
@@ -776,10 +820,20 @@ button {
 
 }
 
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: var(--focus-txt-btn);
+}
+
 .modal-close-icon {
     position: absolute;
     left: 33.33%;
     right: 33.33%;
     top: 33.33%;
     bottom: 33.33%;
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+    fill: var(--body-cl);
 }

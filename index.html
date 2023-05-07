@@ -25,9 +25,9 @@
             <nav class="header-nav">
                 <a class="header-link link" href="./index.html">Web<span class="header-logo">Studio</span></a>
                 <ul class="header-nav-list list">
-                    <li><a class="contacts link" href="./index.html">Studio</a></li>
-                    <li><a class="contacts link" href="./portfolio.html">Portfolio</a></li>
-                    <li><a class="contacts link" href="">Contacts</a></li>
+                    <li class="header-after"><a class="contacts link active" href="./index.html">Studio</a></li>
+                    <li class="header-after"><a class="contacts link" href="./portfolio.html">Portfolio</a></li>
+                    <li class="header-after"><a class="contacts link" href="">Contacts</a></li>
                 </ul>
             </nav>
             <address class="header-adress">
@@ -50,7 +50,7 @@
         <section class="hero section">
             <div class="hero-container container">
                 <h1 class="title title-light">Effective Solutions for Your Business</h1>
-                <button type="button" class="btn btn-light light">Order Service</button>
+                <button type="button" class="btn btn-light light" data-modal-open>Order Service</button>
             </div>
         </section>
         <!-- about section -->
@@ -413,15 +413,16 @@
         </div>
 
     </footer>
-    <div class="backdrop">
+    <div class="backdrop" data-modal>
         <div class="modal">
-            <button class="modal-close-btn">
+            <button class="modal-close-btn" data-modal-close>
                 <svg class="modal-close-icon" width="8" height="8">
                     <use href="./images/icons.svg#close-icon"></use>
                 </svg>
             </button>
         </div>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
