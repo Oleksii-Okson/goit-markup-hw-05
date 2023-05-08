@@ -81,7 +81,7 @@ body {
 .contacts {
     display: block;
     gap: 40px;
-    color: var(--secondary-txt-cl);
+    color: #404bbf;
     font-weight: 500;
     padding: 24px 0;
     position: relative;
@@ -104,7 +104,7 @@ body {
 }
 
 .contacts.active::after {
-    background-color: var(--focus-txt-btn);
+    background-color: #404bbf;
 }
 
 .header-nav {
