@@ -779,7 +779,7 @@ button {
 }
 
 .overlay-text:hover,
-.overlay-text:focus {
+.card-thumb:focus {
     transform: translateY(0%);
 }
 
@@ -787,9 +787,6 @@ button {
     transform: translateY(0);
 }
 
-.card-set-item:focus {
-    transform: translateY(0);
-}
 
 .decoration {
     display: block;
