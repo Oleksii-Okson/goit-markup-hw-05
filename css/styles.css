@@ -783,8 +783,11 @@ button {
     transform: translateY(0%);
 }
 
-.card-set-item:hover .overlay,
-.card-set-item:focus .overlay {
+.card-set-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.card-set-item:focus {
     transform: translateY(0);
 }
 
