@@ -780,11 +780,12 @@ button {
 
 }
 
-.overlay-text:hover {
+/* .overlay-text:hover {
     transform: translateY(0%);
-}
+} */
 
-.decoration:focus .overlay-text {
+.decoration:focus .overlay-text,
+.decoration:hover .overlay-text {
     transform: translateY(0%);
 }
 
