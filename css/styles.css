@@ -784,7 +784,7 @@ button {
     transform: translateY(0%);
 }
 
-.decoration:focus.overlay-text {
+.decoration:focus .overlay-text {
     transform: translateY(0%);
 }
 
